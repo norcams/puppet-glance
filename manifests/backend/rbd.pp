@@ -24,6 +24,7 @@ class glance::backend::rbd(
   $rbd_store_ceph_conf    = '/etc/ceph/ceph.conf',
   $rbd_store_pool         = 'images',
   $rbd_store_chunk_size   = '8',
+  $stores                 = 'glance.store.rbd.Store',
   $show_image_direct_url  = undef,
   $package_ensure         = 'present',
 ) {
@@ -39,6 +40,7 @@ class glance::backend::rbd(
     'glance_store/rbd_store_user':        value => $rbd_store_user;
     'glance_store/rbd_store_pool':        value => $rbd_store_pool;
     'glance_store/rbd_store_chunk_size':  value => $rbd_store_chunk_size;
+    'glance_store/stores':                value => $stores;
   }
 
   package { 'python-rbd':
