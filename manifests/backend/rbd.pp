@@ -41,7 +41,7 @@ class glance::backend::rbd(
     'glance_store/rbd_store_chunk_size':  value => $rbd_store_chunk_size;
   }
 
-  package { 'python-ceph':
+  package { 'python-rbd':
     ensure => $package_ensure,
     name   => $::glance::params::pyceph_package_name,
   }

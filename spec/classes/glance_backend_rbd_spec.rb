@@ -20,8 +20,8 @@ describe 'glance::backend::rbd' do
     it { should contain_glance_api_config('glance_store/rbd_store_chunk_size').with_value('8') }
 
 
-    it { should contain_package('python-ceph').with(
-        :name   => 'python-ceph',
+    it { should contain_package('python-rbd').with(
+        :name   => 'python-rbd',
         :ensure => 'present'
       )
     }
@@ -37,8 +37,8 @@ describe 'glance::backend::rbd' do
     end
     it { should contain_glance_api_config('glance_store/rbd_store_user').with_value('user') }
     it { should contain_glance_api_config('glance_store/rbd_store_chunk_size').with_value('2') }
-    it { should contain_package('python-ceph').with(
-        :name   => 'python-ceph',
+    it { should contain_package('python-rbd').with(
+        :name   => 'python-rbd',
         :ensure => 'latest'
       )
     }
