@@ -34,7 +34,7 @@ class glance::backend::rbd(
   }
 
   glance_api_config {
-    'glance_store/default_store':         value => 'rbd';
+    'DEFAULT/default_store':              value => 'rbd';
     'glance_store/rbd_store_ceph_conf':   value => $rbd_store_ceph_conf;
     'glance_store/rbd_store_user':        value => $rbd_store_user;
     'glance_store/rbd_store_pool':        value => $rbd_store_pool;
